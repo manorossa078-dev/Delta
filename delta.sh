@@ -2,11 +2,12 @@
 
 GREEN="\e[1;32m"
 RED="\e[1;31m"
+YELLOW="\e[1;33m"
 DEFAULT="\e[0m"
 FILETYPES=("zip" "7z")
-VERSION="v.0.0.5"
+VERSION="v.0.0.6"
 
-echo -e "${RED}"
+echo -e "${YELLOW}"
 
 cat << "EOF"
  ____       _ _           ___  ____ ___ _   _ _____
@@ -28,6 +29,7 @@ elif [ "$1" == "-h" ]; then
     echo "Use -s [username] to search for a username"
     echo "Use -c to crack an archive password"
     echo "Use -cw followed by your wordlist path to crack a website"
+    echo "Use -lm to launch Maltego"
     echo "-------------------------------------------------------------"
 elif [ "$1" == "-u" ]; then
         echo "-------------------------------------------------------------------"
@@ -80,6 +82,12 @@ elif [ "$1" == "-cw" ]; then
                 gobuster dir -u $target -w $2
                 echo -e "${GREEN}Done cracking!"
         fi
+elif [ "$1" == "-lm" ]; then
+        echo -e "[+] Launching Maltego...${DEFAULT}"
+        maltego
+        echo -e "${GREEN}[*] Maltego's launch terminated."
 else
     echo -e "${RED}Error. Flag not recognized.${DEFAULT}" >&2
 fi
+
+echo -e "${DEFAULT}"
