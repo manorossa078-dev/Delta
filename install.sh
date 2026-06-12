@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly REQUIRES=("sherlock" "john")
+readonly REQUIRES=("sherlock" "john" "maltego")
 readonly GREEN="\e[1;32m"
 readonly YELLOW="\e[1;33m"
 readonly RESET="\e[0m"
