@@ -85,7 +85,7 @@ elif [ "$1" == "-cw" ]; then
 elif [ "$1" == "-lm" ]; then
         echo -e "[+] Launching Maltego...${DEFAULT}"
         maltego
-        echo -e "${GREEN}[*] Maltego's launch terminated."
+        echo -e "${GREEN}[*] Maltego terminated."
 else
     echo -e "${RED}Error. Flag not recognized.${DEFAULT}" >&2
 fi
