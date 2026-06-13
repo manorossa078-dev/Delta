@@ -5,7 +5,7 @@ RED="\e[1;31m"
 YELLOW="\e[1;33m"
 DEFAULT="\e[0m"
 FILETYPES=("zip" "7z")
-VERSION="v.0.0.6"
+VERSION="v.0.0.6 bugfix"
 
 echo -e "${YELLOW}"
 
@@ -35,14 +35,14 @@ elif [ "$1" == "-u" ]; then
         echo "-------------------------------------------------------------------"
         echo "Usage for -s: type -s followed by the username you're searching for"
         echo "Usage for -c: type -c followed by your wordlist file to crack an archive"
-        echo "Usage for -cw: type -cw followed by the URL of the website"
+        echo "Usage for -cw: type -cw followed by the wordlist path"
         echo "-------------------------------------------------------------------"
 elif [ "$1" == "-s" ]; then
     if [ -z "$2" ]; then
         echo -e "${RED}Error. Enter a username.${DEFAULT}" >&2
     else
         echo -e "Searching for $2...${DEFAULT}"
-        sherlock --print-found "$2"
+        maigret $2
         echo -e "${GREEN}Done searching.${DEFAULT}"
     fi
 elif [ "$1" == "-c" ]; then
