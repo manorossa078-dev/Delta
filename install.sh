@@ -8,7 +8,7 @@ readonly YELLOW="\e[1;33m"
 readonly RESET="\e[0m"
 
 for scriptTool in "${SCRIPT_REQ[@]}"; do
-        if [ $? -eq 0 ]; then
+        if [ ! command -v toilet ]; then
                 echo -e "${GREEN}[+] TOIlet already installed.${RESET}"
                 toilet -f slant -F metal Delta Install
         else
